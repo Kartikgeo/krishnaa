@@ -288,6 +288,25 @@ body{
   .btn{width:100%;}
 }
 
+@media (max-width:768px){
+.glass{display:flex!important;flex-direction:column!important;justify-content:center;align-items:center;min-height:88vh;padding:24px 20px;gap:18px}
+.text-col{width:100%;text-align:left;order:1}
+.photo-col{order:2;width:100%;display:flex;justify-content:center;margin:6px 0 8px;transform:none!important}
+.photo-frame{width:min(210px,60vw)!important;aspect-ratio:4/5}
+.btn{order:3;width:78%!important;max-width:320px;align-self:center}
+.main-title{font-size:clamp(44px,11vw,58px)!important}
+}
+
+@media (max-width:768px){
+body{overflow:auto;}
+.container{padding:20px 15px;}
+.glass{display:flex!important;flex-direction:column;justify-content:center;align-items:center;width:100%;min-height:92vh;padding:28px 22px;gap:22px;backdrop-filter:blur(4px)!important}
+.text-col{width:100%;text-align:left}
+.photo-col{width:100%;display:flex;justify-content:center;order:2}
+.photo-frame{width:82%!important;max-width:320px;aspect-ratio:4/5;border-radius:22px}
+.button-area{width:100%;display:flex;justify-content:center;order:3}
+.btn{width:82%!important;max-width:320px}
+}
 </style>
 </head>
 <body>
@@ -311,32 +330,23 @@ window.addEventListener("load", () => {
 
 
 <div class="container" id="mainContent">
-  <div class="glass">
-
-    <!-- LEFT TEXT -->
-    <div class="text-col">
-      <h1 class="main-title">Happy Birthday</h1>
-      <h2 class="sub">Dear lavanaya(ncc paglu)🌙💖</h2>
-      <p class="sub">Happy Birthday  🌙✨
-Tonight the stars shine a little softer,
-the moon glows a little brighter —
-just to celebrate someone as special as you.
-
-Keep dreaming. Keep glowing.
-The universe has beautiful things waiting for you. 💫💖✨</p>
-      <button class="btn" onclick="openLetter()">💌 A Little Letter For You</button>
-    </div>
-
-    <!-- RIGHT PHOTO -->
-    <div class="photo-col">
-      <div class="photo-frame">
-          <img id="slide" src="photo1.jpg" alt="memories" class="active">
-      </div>
-    </div>
-
-  </div>
+  
+<div class="glass">
+<div class="text-col">
+<h1 class="main-title">Happy Birthday</h1>
+<h2 class="sub">Dear lavanaya(ncc paglu)🌙💖</h2>
+<p class="sub">Happy Birthday 🌙✨ Tonight the stars shine a little softer, the moon glows a little brighter — just to celebrate someone as special as you.<br><br>Keep dreaming. Keep glowing. The universe has beautiful things waiting for you. 💫💖✨</p>
 </div>
-
+<div class="photo-col">
+<div class="photo-frame">
+<img id="slide" src="photo1.jpg" alt="memories" class="active">
+</div>
+</div>
+<div class="button-area">
+<button class="btn" onclick="openLetter()">💌 A Little Letter For You</button>
+</div>
+</div>
+</div>
 
 <div class="letter-modal" id="letterModal">
 <div class="letter-box">
@@ -387,7 +397,7 @@ setInterval(()=>{
    slideEl.classList.add("active");
    slideEl.style.opacity=1;
  },350);
-},3400);
+},3000);
 
 /* star text */
 const canvas=document.getElementById("starTextCanvas");
@@ -472,7 +482,7 @@ function closeLetter(){document.getElementById('letterModal').style.display='non
   layer.style.pointerEvents='none';
   layer.style.overflow='hidden';
 
-  const count=window.innerWidth<768?35:90;
+  const count=window.innerWidth<768?18:70;
   for(let i=0;i<count;i++){
     const s=document.createElement('div');
     s.className='galaxy-star';
