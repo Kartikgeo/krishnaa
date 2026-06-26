@@ -7,10 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;}
-.photo-frame img,.container,.glass,#startScreen,.btn{
-will-change:transform,opacity;
-transform:translateZ(0);
-}
+
 body{
     margin:0;
     font-family:'Poppins',sans-serif;
@@ -25,7 +22,7 @@ body{
 
 /* ⭐ BIG GLASS */
 .glass{
-    backdrop-filter: blur(10px);
+    backdrop-filter: blur(4px);
     background: rgba(255,255,255,0.06);
     border:1px solid rgba(255,255,255,0.18);
     box-shadow:0 40px 120px rgba(0,0,0,0.75);
@@ -166,7 +163,7 @@ body{
         0 0 30px rgba(253,224,71,0.25),
         0 10px 60px rgba(0,0,0,0.8);
 
-    animation:titleFloat 6s ease-in-out infinite;
+    animation:none;
 }
 
 @keyframes titleFloat{
@@ -183,7 +180,7 @@ body{
     background:radial-gradient(circle,
         rgba(253,224,71,0.20),
         transparent 60%);
-    filter:blur(70px);
+    filter:blur(35px);
     z-index:-1;
 }
 
@@ -199,7 +196,7 @@ body{
     color:white;
 
     box-shadow:
-        0 20px 60px rgba(168,85,247,0.45);
+        0 8px 25px rgba(168,85,247,0.35);
 
     transition:all .25s ease;
 }
@@ -363,7 +360,7 @@ window.addEventListener("load", () => {
 function startExperience(){
     const start=document.getElementById("startScreen");
     start.style.opacity=0; start.style.transform='scale(1.08)';
-    setTimeout(()=>start.style.display="none",700);
+    setTimeout(()=>start.style.display="none",450);
     document.getElementById("mainContent").classList.add("show");
     const music=document.getElementById("bgMusic");
     music.volume=0;
@@ -482,7 +479,7 @@ function closeLetter(){document.getElementById('letterModal').style.display='non
   layer.style.pointerEvents='none';
   layer.style.overflow='hidden';
 
-  const count=window.innerWidth<768?18:70;
+  const count=window.innerWidth<768?10:40;
   for(let i=0;i<count;i++){
     const s=document.createElement('div');
     s.className='galaxy-star';
