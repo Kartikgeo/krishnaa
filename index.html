@@ -262,8 +262,26 @@ body{
 }
 
 .letter-modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;z-index:99;padding:20px}
-.letter-box{max-width:650px;width:100%;background:rgba(20,20,30,.92);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.15);border-radius:24px;padding:30px;color:#fff;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.letter-box h2{margin-top:0}
+.letter-box{
+max-width:520px;
+width:90%;
+background:rgba(20,20,30,.92);
+backdrop-filter:blur(10px);
+border:1px solid rgba(255,255,255,.15);
+border-radius:20px;
+padding:22px;
+color:#fff;
+box-shadow:0 20px 60px rgba(0,0,0,.5)
+}
+.letter-box h2{
+margin-top:0;
+font-size:24px;
+margin-bottom:12px;
+}
+.letter-box p{
+font-size:15px;
+line-height:1.6;
+}
 .close-btn{margin-top:20px;padding:12px 24px;border:none;border-radius:999px;cursor:pointer;background:linear-gradient(135deg,#f59e0b,#a855f7);color:#fff}
 
 
@@ -347,13 +365,14 @@ window.addEventListener("load", () => {
 
 <div class="letter-modal" id="letterModal">
 <div class="letter-box">
-<h2>Happy Birthday, Janu ❤️
-
+<h2>Happy Birthday, Janu ❤️</h2>
+<p>
 On your special day, I just want to remind you how much you mean to me. Thank you for bringing so much happiness, love, and warmth into my life. Every moment with you is a memory I cherish, and I'm truly grateful to have you.
 
 I hope this year brings you endless smiles, good health, success, and everything your heart wishes for. Keep shining the way you always do because that's what makes you so special.
 
-Happy Birthday once again, my Janu. ❤️ I love you more than words can ever express. Have the most amazing day—you deserve it. 🫶🎂💕</p>
+Happy Birthday once again, my Janu. ❤️ I love you more than words can ever express. Have the most amazing day—you deserve it. 🫶🎂💕
+</p>
 <button class="close-btn" onclick="closeLetter()">Close ❤️</button>
 </div></div>
 
